@@ -1,0 +1,52 @@
+# Model parameters.
+model:
+  alpha: 0.99
+  alpha_cosine: True
+  feature_extractor_arch: "resnet50"
+  feature_extractor_opts:
+    global_pooling: True
+  # Use two feature levels for BoW: "block3" (aka conv4 of ResNet) and "block4"
+  # (aka conv5 of ResNet).
+  bow_levels: ["block3", "block4"]
+  bow_extractor_opts:
+    inv_delta: 15
+    num_words: 8192
+  bow_predictor_opts:
+    kappa: 8
+  # (Optional) on-line learning of a linear classifier on top of teacher
+  # features for monitoring purposes.
+  num_classes: 1000
+
+# Optimization parameters.
+optim:
+  optim_type: "sgd"
+  momentum: 0.9
+  weight_decay: 0.0001
+  nesterov: False
+  num_epochs: 200
+  lr: 0.03
+  end_lr: 0.00003
+  lr_schedule_type: "cos_warmup"
+  warmup_epochs: 10
+  permanent: 10 # save a permanent checkpoint every 10 epochs.
+
+# Data parameters:
+data:
+  dataset_name: "ImageNet"
+  batch_size: 256
+  epoch_size:
+  subset:
+  cjitter: [0.4, 0.4, 0.4, 0.1]
+  cjitter_p: 0.8
+  gray_p: 0.2
+  gaussian_blur: [0.1, 2.0]
+  gaussian_blur_p: 0.5
+  num_img_crops: 2 # 2 crops of size 160x160.
+  image_crop_size: 160
+  image_crop_range: [0.08, 0.6]
+  num_img_patches: 5 # 5 patches of size 96x96.
+  img_patch_preresize: 256
+  img_patch_preresize_range: [0.6, 1.0]
+  img_patch_size: 96
+  img_patch_jitter: 24
+  only_patches: False

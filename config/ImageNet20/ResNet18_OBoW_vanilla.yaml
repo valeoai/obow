@@ -1,0 +1,48 @@
+# Model parameters.
+model:
+  alpha: 0.99
+  alpha_cosine: True
+  feature_extractor_arch: "resnet18"
+  feature_extractor_opts:
+    global_pooling: True
+  # Use a single feature level for BoW: "block4" (aka conv5 of ResNet).
+  bow_levels: ["block4",]
+  bow_extractor_opts:
+    inv_delta: 10
+    num_words: 8192
+  bow_predictor_opts:
+    kappa: 5
+  # (Optional) on-line learning of a linear classifier on top of teacher
+  # features for monitoring purposes.
+  num_classes: 1000
+
+# Optimization parameters.
+optim:
+  optim_type: "sgd"
+  momentum: 0.9
+  weight_decay: 0.0005
+  nesterov: False
+  num_epochs: 80
+  lr: 0.05
+  lr_schedule_type: "cos"
+
+# Data parameters:
+data:
+  dataset_name: "ImageNet"
+  batch_size: 256
+  epoch_size:
+  subset: 260 # use only 260 images per class, i.e., 20% of ImageNet.
+  cjitter: [0.4, 0.4, 0.4, 0.1]
+  cjitter_p: 0.8
+  gray_p: 0.2
+  gaussian_blur: [0.1, 2.0]
+  gaussian_blur_p: 0.5
+  num_img_crops: 1 # 1 crop of size 160x160.
+  image_crop_size: 160
+  image_crop_range: [0.08, 0.6]
+  num_img_patches: 0 # 0 patches.
+  img_patch_preresize: 256
+  img_patch_preresize_range: [0.6, 1.0]
+  img_patch_size: 96
+  img_patch_jitter: 24
+  only_patches: False

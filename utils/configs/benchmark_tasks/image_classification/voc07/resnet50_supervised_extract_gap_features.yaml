@@ -1,0 +1,25 @@
+DATASET: voc2007
+NUM_DEVICES: 8
+LOGGER_FREQUENCY: 10
+MODEL:
+  NUM_CLASSES: 20
+  MODEL_NAME: resnet_supervised_finetune_linear
+  DEPTH: 50
+  ALLOW_INPLACE_SUM: True
+  MEMONGER: True
+  EXTRACT_FEATURES_ONLY: True
+  EXTRACT_BLOBS: [pool5, pool5_bn]
+TRAIN:
+  DATA_TYPE: train
+  BATCH_SIZE: 256
+  GLOBAL_RESIZE_VALUE: 224
+  DATA_TRANSFORMS: [scale, global_resize]
+  DATA_PROCESSING: [color_normalization]
+TEST:
+  # for VOC2007, we train on the trainval split and evaluate on the test set.
+  DATA_TYPE: test
+  BATCH_SIZE: 256
+  # IN1k RN50 supervised
+  PARAMS_FILE: https://dl.fbaipublicfiles.com/fair_self_supervision_benchmark/models/resnet50_in1k_supervised.pkl
+  # 386 init places205 supervised
+  PARAMS_FILE: https://dl.fbaipublicfiles.com/fair_self_supervision_benchmark/models/resnet50_places205_supervised.pkl
