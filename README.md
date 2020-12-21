@@ -1,4 +1,4 @@
-# **Online Bag-of-Visual-Words Generationfor Unsupervised Representation Learning**
+# **Online Bag-of-Visual-Words Generation for Unsupervised Representation Learning**
 
 ![OBoW](./img/obow_overview.png)
 
