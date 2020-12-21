@@ -61,10 +61,30 @@ You can take a look at the [Dockerfile](./Dockerfile) if you are uncertain
 about the steps to install this project.
 
 
-### **Download pre-trained models (optional).**
+## **Download our ResNet50 pre-trained model**
 
-TODO
+| Method | Epochs | Batch-size | Dataset | ImageNet linear acc. | Links to pre-trained weights |
+|----------------|-------------------|---------------------|--------------------|--------------------|--------------------|
+| OBoW | 200 | 256 | ImageNet | 73.8 | [entire model](https://github.com/valeoai/obow/releases/download/v0.1.0/ImageNetFull_ResNet50_OBoW_full.zip) / [only feature extractor](https://github.com/valeoai/obow/releases/download/v0.1.0/ImageNetFull_ResNet50_OBoW_full_feature_extractor.zip) |
 
+
+To download our ResNet50 pre-trained model from the command line run:
+
+```bash
+# Run from the OBoW directory
+$ mkdir ./experiments/ImageNetFull
+$ cd ./experiments/ImageNetFull
+
+# To download all model files
+$ wget https://github.com/valeoai/obow/releases/download/v0.1.0/ImageNetFull_ResNet50_OBoW_full.zip
+$ unzip ImageNetFull_ResNet50_OBoW_full.zip
+
+# To download only the student feature extractor in torchvision-like format
+$ wget https://github.com/valeoai/obow/releases/download/v0.1.0/ImageNetFull_ResNet50_OBoW_full_feature_extractor.zip
+$ unzip ImageNetFull_ResNet50_OBoW_full_feature_extractor.zip
+
+$ cd ../../
+```
 
 ## **Experiments: Training and evaluating ImageNet self-supervised features.**
 
@@ -223,4 +243,22 @@ $ python main_obow.py --config=ImageNet20/ResNet18_OBoW_full --workers=16 --dst-
 $ python main_obow.py --config=ImageNet20/ResNet18_OBoW_full --workers=16 --episodes 200 --fewshot-q 1 --fewshot-n 50 --fewshot-k 1 5 --evaluate --start-epoch=-1 --dst-dir=./experiments/ --data-dir=/datasets_local/ImageNet
 # Linear classification evaluation. Note the following command precaches the extracted features at root/local_storage/spyros/cache/obow.
 $ python main_linear_classification.py --config=ImageNet20/ResNet18_OBoW_full --workers=16 -b 256 --wd 0.000002 --dataset ImageNet --name "ImageNet_LinCls_precache_b256_lr10p0wd2e6" --precache --lr 10.0 --epochs 50 --schedule 15 30 45 --subset=260 --dst-dir=./experiments/ --data-dir=/datasets_local/ImageNet --cache-dir=/root/local_storage/spyros/cache/obow
+```
+
+### **Download the ResNet18-based OBoW models pre-trained on 20% of ImageNet.**
+
+```bash
+# Run from the OBoW directory
+$ mkdir ./experiments/ImageNet20
+$ cd ./experiments/ImageNet20
+
+# To download the full OBoW version
+$ wget https://github.com/valeoai/obow/releases/download/v0.1.0/ImageNet20_ResNet18_OBoW_full.zip
+$ unzip ImageNet20_ResNet18_OBoW_full.zip
+
+# To download the vanilla OBoW version
+$ wget https://github.com/valeoai/obow/releases/download/v0.1.0/ImageNet20_ResNet18_OBoW_vanilla.zip
+$ unzip ImageNet20_ResNet18_OBoW_vanilla.zip
+
+$ cd ../../
 ```
