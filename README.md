@@ -12,7 +12,7 @@ If you use the OBoW code or framework in your research, please consider citing:
 @article{gidaris2020obow,
   title={Online Bag-of-Visual-Words Generation for Unsupervised Representation Learning},
   author={Gidaris, Spyros and Bursuc, Andrei and Komodakis, Nikos and Cord, Matthieu and P{\'e}rez, Patrick},
-  journal={arXiv preprint arXiv:2012.xxxx},
+  journal={arXiv preprint arXiv:2012.11552},
   year={2020}
 }
 ```
