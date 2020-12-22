@@ -219,16 +219,16 @@ $ python tools/svm/test_svm.py \
 
 ### **Pascal VOC07+12 Object Detection evaluation.**
 
-1. First install [Detectron2](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md).
+**(1)** First install [Detectron2](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md).
 
-2. Convert a pre-trained model from the torchvision format to the caffe2 format required by Detectron2 (see command above). 
+**(2)** Convert a pre-trained model from the torchvision format to the caffe2 format required by Detectron2 (see command above). 
 
-3. Put dataset under "./datasets" directory, following the [directory structure](https://github.com/facebookresearch/detectron2/tree/master/datasets)
+**(3)** Put dataset under "./datasets" directory, following the [directory structure](https://github.com/facebookresearch/detectron2/tree/master/datasets)
 	 requried by Detectron2.
    
-4. Copy the [config file](https://github.com/valeoai/obow/tree/main/utils/configs/benchmark_tasks/object_detection) in the Detectron2 repo `configs/PascalVOC-Detection`.
+**(4)** Copy the [config file](https://github.com/valeoai/obow/tree/main/utils/configs/benchmark_tasks/object_detection) in the Detectron2 repo `configs/PascalVOC-Detection`.
 
-5. In Detectron2 launch the `train_net.py` script to reproduce the object detection experiments on Pascal VOC:
+**(5)** In Detectron2 launch the `train_net.py` script to reproduce the object detection experiments on Pascal VOC:
 
 ```bash
 python tools/train_net.py --num-gpus 8 --config-file configs/PascalVOC-Detection/pascal_voc_0712_faster_rcnn_R_50_C4_BoWNetpp_K8192.yaml
