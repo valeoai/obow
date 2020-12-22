@@ -2,9 +2,11 @@
 
 ![OBoW](./img/obow_overview.png)
 
-This is a PyTorch implementation of the OBoW paper:   
+This is a PyTorch implementation of the [OBoW](https://arxiv.org/abs/2012.11552) paper:   
 **Title:**      "Online Bag-of-Visual-Words Generationfor Unsupervised Representation Learning"    
 **Authors:**     S. Gidaris, A. Bursuc, G. Puy, N. Komodakis, M. Cord, and P. Pérez  
+**arXiv:** https://arxiv.org/abs/2012.11552    
+**papers with code:** https://paperswithcode.com/paper/online-bag-of-visual-words-generation-for    
 
 If you use the OBoW code or framework in your research, please consider citing:
 
