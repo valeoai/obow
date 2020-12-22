@@ -159,7 +159,7 @@ $ python main_obow.py --config=ImageNetFull/ResNet50_OBoW_full --dst-dir=./exper
 
 ### **Pascal VOC07 Classification evaluation.**
 
-First convert from the torchvision format to (see command above) to the caffe2 format.
+First convert from the torchvision format to the caffe2 format (see command above).
 ```bash
 # Run from the obow directory
 python utils/convert_pytorch_to_caffe2.py --pth_model ./experiments/ImageNetFull/ResNet50_OBoW_full/tochvision_resnet50_student_K8192_epoch200.pth.tar --output_model ./experiments/ImageNetFull/ResNet50_OBoW_full/caffe2_resnet50_student_K8192_epoch200_bgr.pkl --rgb2bgr True
@@ -215,6 +215,23 @@ $ python tools/svm/test_svm.py \
     --targets_data_file ./obow_ep200/ssl-benchmark-output/extract_features_gap/data/test_pool5_bn_targets.npy \
     --costs_list "0.05,0.1,0.3,0.5,1.0,3.0,5.0" \
     --output_path ./obow_ep200/ssl-benchmark-output/extract_features_gap/data/voc07_svm/svm_pool5bn/    
+```
+
+### **Pascal VOC07+12 Object Detection evaluation.**
+
+1. First install [Detectron2](https://github.com/facebookresearch/detectron2/blob/master/INSTALL.md).
+
+2. Convert a pre-trained model from the torchvision format to the caffe2 format required by Detectron2 (see command above). 
+
+3. Put dataset under "./datasets" directory, following the [directory structure](https://github.com/facebookresearch/detectron2/tree/master/datasets)
+	 requried by Detectron2.
+   
+4. Copy the [config file](https://github.com/valeoai/obow/tree/main/utils/configs/benchmark_tasks/object_detection) in the Detectron2 repo `configs/PascalVOC-Detection`.
+
+5. In Detectron2 launch the `train_net.py` script to reproduce the object detection experiments on Pascal VOC:
+
+```bash
+python tools/train_net.py --num-gpus 8 --config-file configs/PascalVOC-Detection/pascal_voc_0712_faster_rcnn_R_50_C4_BoWNetpp_K8192.yaml
 ```
 
 ## **Other experiments: Training using 20% of ImageNet and ResNet18.**
