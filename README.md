@@ -1,21 +1,28 @@
 # **Online Bag-of-Visual-Words Generation for Unsupervised Representation Learning**
 
+Official PyTorch implementation of the [OBoW](https://arxiv.org/abs/2012.11552) paper accepted at CVPR 2021   
+
+
 ![OBoW](./img/obow_overview.png)
 
-This is a PyTorch implementation of the [OBoW](https://arxiv.org/abs/2012.11552) paper:   
-**Title:**      "Online Bag-of-Visual-Words Generationfor Unsupervised Representation Learning"    
-**Authors:**     S. Gidaris, A. Bursuc, G. Puy, N. Komodakis, M. Cord, and P. Pérez  
-**arXiv:** https://arxiv.org/abs/2012.11552    
-**papers with code:** https://paperswithcode.com/paper/online-bag-of-visual-words-generation-for    
+## [Paper](https://arxiv.org/abs/2012.11552) | [Papers with code](https://paperswithcode.com/paper/online-bag-of-visual-words-generation-for) | [Pretrained full model](https://github.com/valeoai/obow/releases/download/v0.1.0/ImageNetFull_ResNet50_OBoW_full.zip) | [Pretrained feature extractor](https://github.com/valeoai/obow/releases/download/v0.1.0/ImageNetFull_ResNet50_OBoW_full_feature_extractor.zip) 
+[Spyros Gidaris](https://scholar.google.fr/citations?user=7atfg7EAAAAJ&hl=en),
+[Andrei Bursuc](https://abursuc.github.io/),
+[Gilles Puy](https://sites.google.com/site/puygilles/home),
+[Nikos Komodakis](http://imagine.enpc.fr/~komodakn/),
+[Matthieu Cord](http://webia.lip6.fr/~cord/),
+[Patrick Pérez](https://ptrckprz.github.io/),
+[CVPR 2021](http://cvpr2021.thecvf.com/)<br/>
+
 
 If you use the OBoW code or framework in your research, please consider citing:
 
 ```
-@article{gidaris2020obow,
-  title={Online Bag-of-Visual-Words Generation for Unsupervised Representation Learning},
-  author={Gidaris, Spyros and Bursuc, Andrei and Puy, Gilles and Komodakis, Nikos and Cord, Matthieu and P{\'e}rez, Patrick},
-  journal={arXiv preprint arXiv:2012.11552},
-  year={2020}
+@inproceedings{gidaris2021obow,
+    title={Learning Representations by Predicting Bags of Visual Words},
+    author={Gidaris, Spyros and Bursuc, Andrei and Komodakis, Nikos and P{\'e}rez, Patrick and Cord, Matthieu},
+    booktitle={CVPR},
+    year={2021}
 }
 ```
 
