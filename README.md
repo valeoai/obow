@@ -9,7 +9,7 @@ Official PyTorch implementation of the [OBoW](https://arxiv.org/abs/2012.11552) 
 [Spyros Gidaris](https://scholar.google.fr/citations?user=7atfg7EAAAAJ&hl=en),
 [Andrei Bursuc](https://abursuc.github.io/),
 [Gilles Puy](https://sites.google.com/site/puygilles/home),
-[Nikos Komodakis](http://imagine.enpc.fr/~komodakn/),
+[Nikos Komodakis](https://www.csd.uoc.gr/~komod/),
 [Matthieu Cord](http://webia.lip6.fr/~cord/),
 [Patrick Pérez](https://ptrckprz.github.io/),
 [CVPR 2021](http://cvpr2021.thecvf.com/)<br/>
