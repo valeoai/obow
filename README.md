@@ -20,7 +20,7 @@ If you use the OBoW code or framework in your research, please consider citing:
 ```
 @inproceedings{gidaris2021obow,
     title={Learning Representations by Predicting Bags of Visual Words},
-    author={Gidaris, Spyros and Bursuc, Andrei and Komodakis, Nikos and P{\'e}rez, Patrick and Cord, Matthieu},
+    author={Gidaris, Spyros and Bursuc, Andrei and Puy, Gilles and Komodakis, Nikos and Cord, Matthieu and P{\'e}rez, Patrick},
     booktitle={CVPR},
     year={2021}
 }
